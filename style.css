@@ -1,0 +1,47 @@
+:root {
+    --pink: #ff1493;
+    --pink-light: #ff69b4;
+    --dark-bg: #0d0208;
+    --glow: 0 0 10px var(--pink), 0 0 20px var(--pink), inset 0 0 10px var(--pink);
+    --stroke: 1px solid var(--pink);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+body { background-color: var(--dark-bg); color: white; overflow-x: hidden; }
+
+/* Header & Watermark */
+header { padding: 20px; text-align: center; border-bottom: var(--stroke); box-shadow: 0 0 15px var(--pink); }
+h1 { text-shadow: 0 0 10px var(--pink); }
+.watermark { position: fixed; bottom: 10px; right: 10px; opacity: 0.5; font-weight: bold; color: var(--pink-light); text-shadow: 0 0 5px var(--pink); pointer-events: none; z-index: 100; }
+
+/* Button & Input Umum */
+button, input[type="text"], select {
+    background: transparent; color: white; border: var(--stroke); padding: 8px 15px;
+    border-radius: 5px; box-shadow: 0 0 5px var(--pink); cursor: pointer; outline: none; transition: 0.3s;
+}
+button:hover { background: var(--pink); box-shadow: var(--glow); }
+
+/* Tombol Hapus & Clear Canvas */
+.btn-hapus { background: transparent; color: #ff4d4d; border: 1px solid #ff4d4d; box-shadow: 0 0 5px #ff4d4d; margin-left: 5px; }
+.btn-hapus:hover { background: #ff4d4d; color: white; box-shadow: 0 0 15px #ff4d4d; }
+
+/* Popup & Cookie */
+.overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: none; justify-content: center; align-items: center; z-index: 50; }
+.popup { background: var(--dark-bg); padding: 30px; border: var(--stroke); box-shadow: var(--glow); border-radius: 10px; text-align: center; }
+.popup div { margin-top: 15px; display: flex; gap: 10px; justify-content: center; }
+.kode-acak { font-size: 24px; font-weight: bold; letter-spacing: 5px; color: var(--pink-light); text-shadow: var(--glow); margin: 10px 0; }
+.cookie-banner { position: fixed; bottom: 0; width: 100%; background: var(--dark-bg); border-top: var(--stroke); padding: 15px; text-align: center; display: none; z-index: 1000; box-shadow: 0 0 20px var(--pink); }
+
+/* Layout Beranda */
+.container { padding: 20px; max-width: 800px; margin: auto; }
+.project-list { display: grid; gap: 15px; margin-top: 20px; }
+.project-item { border: var(--stroke); padding: 15px; border-radius: 8px; box-shadow: 0 0 8px var(--pink); display: flex; justify-content: space-between; align-items: center; }
+
+/* Layout Halaman Project */
+.top-bar { display: flex; justify-content: space-between; padding: 10px 20px; border-bottom: var(--stroke); box-shadow: 0 0 10px var(--pink); align-items: center; }
+.top-left { display: flex; align-items: center; gap: 10px; }
+.top-left input { font-size: 16px; font-weight: bold; width: 150px; }
+.tools-bottom { position: fixed; bottom: 0; width: 100%; padding: 15px; border-top: var(--stroke); background: var(--dark-bg); box-shadow: 0 0 15px var(--pink); display: flex; justify-content: center; gap: 15px; align-items: center; flex-wrap: wrap; }
+#input-warna { width: 40px; height: 40px; padding: 0; border: var(--stroke); background: transparent; cursor: pointer; box-shadow: var(--glow); border-radius: 5px; }
+canvas { display: block; margin: auto; background: white; cursor: crosshair; }

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daus Drawing Official</title>
+    <link rel="icon" href="/icon.jpg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Daus Drawing Official</h1>
+    </header>
+
+    <div class="container">
+        <button onclick="document.getElementById('popup-baru').style.display='flex'">+ Buat Project Baru</button>
+        <div class="project-list" id="list-project">
+            </div>
+    </div>
+
+    <div class="overlay" id="popup-baru">
+        <div class="popup">
+            <h3>Nama Project Baru</h3>
+            <br>
+            <input type="text" id="input-nama-project" placeholder="Masukkan nama project...">
+            <div>
+                <button onclick="document.getElementById('popup-baru').style.display='none'">Batal</button>
+                <button onclick="buatProject()">Buat</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" id="popup-hapus">
+        <div class="popup">
+            <h3>Konfirmasi Hapus</h3>
+            <p>Ketik kode di bawah untuk menghapus project <br><b id="nama-target-hapus"></b></p>
+            <div class="kode-acak" id="tampilan-kode-acak"></div>
+            <input type="text" id="input-konfirmasi-kode" placeholder="Masukkan kode...">
+            <div>
+                <button onclick="document.getElementById('popup-hapus').style.display='none'">Batal</button>
+                <button class="btn-hapus" onclick="eksekusiHapus()">Hapus Permanen</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="cookie-banner" id="cookie-banner">
+        <p>Website ini menggunakan cookie untuk menyimpan data gambar secara lokal di perangkat Anda.</p>
+        <button onclick="terimaCookie()" style="margin-top:10px;">Mengerti</button>
+    </div>
+
+    <div class="watermark">Daus XD</div>
+
+    <script src="script.js"></script>
+    <script>
+        window.onload = () => {
+            cekCookie();
+            tampilkanListProject();
+        };
+    </script>
+</body>
+</html>
